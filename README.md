@@ -46,3 +46,7 @@ Think critically about what metrics you would think would be of interest to a co
 Determine what question we would ask, what the null and alternative hypothesis would be to answer that question, and what statistical test could be used to test this hypothesis.
 
 Knowing what test should be used, what data should be collected?
+
+---
+
+*Note: The associated files for this assignment are in the **ChallengeFiles** folder of the repository.*
