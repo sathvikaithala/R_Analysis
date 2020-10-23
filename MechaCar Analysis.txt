@@ -1,0 +1,96 @@
+MechaCar Analysis
+
+UC Berkeley Extension Data Analytics Boot Camp Module 15 Challenge
+---
+
+
+MPG Multiple Regression Results:
+
+Call:
+lm(formula = mpg ~ vehicle.length + vehicle.weight + spoiler.angle + 
+    ground.clearance, data = mpgs)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-21.3395  -4.1155  -0.2094   6.8789  17.2672 
+
+Coefficients:
+                   Estimate Std. Error t value Pr(>|t|)    
+(Intercept)      -1.076e+02  1.576e+01  -6.823 1.87e-08 ***
+vehicle.length    6.240e+00  6.609e-01   9.441 3.05e-12 ***
+vehicle.weight    1.277e-03  6.948e-04   1.837   0.0728 .  
+spoiler.angle     8.031e-02  6.656e-02   1.207   0.2339    
+ground.clearance  3.659e+00  5.394e-01   6.784 2.13e-08 ***
+
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 8.853 on 45 degrees of freedom
+Multiple R-squared:  0.7032,	Adjusted R-squared:  0.6768 
+F-statistic: 26.65 on 4 and 45 DF,  p-value: 2.277e-11
+
+
+
+Which variables/coefficients provided a non-random amount of variance to the mpg values in the dataset?
+
+- We found that vehicle weight and ground clearance are the two variables in our dataset that had a non-random affect on mpg. We determined this by looking at the p-values, both of which are far below our significance level of 0.05.
+
+Is the slope of the linear model considered to be zero? Why or why not?
+
+- The slope of the linear model is not zero, since there is a positive correlation due to the variance of the residuals is greater than 0.
+
+Does this linear model predict mpg of MechaCar prototypes effectively? Why or why not?
+
+- While this model does an okay job of predicting fuel efficiencty, it is only accurate around 70% of the time (Multiple R^2 = 0.7032). Therefore, it is a functional model, but should be taken with a grain of salt to account for the 30% of the time it is not accurate.
+
+
+
+---
+
+Suspension Coil Summary:
+
+
+Summary Statistics Table for Suspension PSI:
+ Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+   1463    1497    1500    1500    1501    1536 
+
+
+The design specifications for the MechaCar suspension coils dictate that the variance of the suspension coils must not exceed 100 pounds per inch. Does the current manufacturing data meet this design specification? Why or why not?
+
+- The MechaCar meets suspension coil variance specifications of 100PSI, since the minimum PSI is 1463 and the max is 1536. 1536 - 1463 = 73 PSI, which is within spec.
+
+
+---
+
+Suspension Coil T-Test:
+
+Using the same suspension coil data and the MechaCarChallenge.RScript file, determine if the suspension coil’s pound-per-inch results are statistically different from the mean population results of 1,500 pounds per inch.
+
+Results of our one-sample t-test on the suspension coil data:
+
+data:  suspension$PSI
+t = -0.65784, df = 149, p-value = 0.5117
+alternative hypothesis: true mean is not equal to 1500
+95 percent confidence interval:
+ 1498.122 1500.940
+sample estimates:
+mean of x 
+ 1499.531 
+
+
+ We see that the mean result of the one-sample t-test is 1499.53, with a p-value of 0.51. 
+
+---
+
+Design Your Own Study:
+
+I believe a potential consumer of the MechaCar would like to see the driving range of a MechaCar compared to that of it's competition. 
+This metric is important because it has an impact on the amount of time a consumer spends at the gas station, and how often they have to refill. 
+While fuel economy is important, driving range is also important because a car that gets great fuel economy that has a very small tank might be more tedious to own than a less economical car that can go weeks without needing a refill.
+
+In order to determine this, you would need both fuel tank size (in gallons) and fuel economy (in mpg). By multiplying these two, you would get the range. You would need this information for a multitude of cars, each tested many, many times in order to get a good baseline.
+
+The null hypothesis for this study would be that there is no significant, non-random difference between a MechaCar's driving range and that of the competition's offerings. 
+
+The alternate hypothesis would be that there is a significant difference between the MechaCar and it's competitors when it comes to driving range.
+
+A two-sample t-test would be appropriate for this experiment.
