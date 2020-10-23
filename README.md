@@ -4,5 +4,10 @@ UC Berkeley Extension Data Analytics Boot Camp Module 15 - R
 
 ---
 
+MechaCar Analysis.txt
+- This file includes the write-up for this challenge. 
 
-*Note: The associated files for this assignment are in the **ChallengeFiles** folder of the repository.*
+MechaCarChallenge.R
+- This is the file that includes all the R Script used in this challenge.
+
+---
